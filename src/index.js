@@ -15,8 +15,8 @@ const markupCountryList = (countries = []) => {
     const markup = countries
       .map(({ name, flags }) => {
         return `
-    <ul>
-    <li><img src="${flags.svg}" width=40, height=25 alt="Flag of ${name.official}">
+    <ul class="country-jslist">
+    <li class="country-item"><img src="${flags.svg}" width=40, height=25 alt="Flag of ${name.official}">
     <h2>${name.official}</h2>
     </li>
     </ul>
