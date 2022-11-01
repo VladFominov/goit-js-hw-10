@@ -49,21 +49,21 @@ const markupCountryInfo = (country) => {
 
 
 inputRef.addEventListener('input', debounce(e => {
-    countryInfo = '';
-    countryList = '';
+    countryInfo.textContent = '';
+    countryList.textContent = '';
   const value = e.target.value.trim()
   if (!value) return;
     fetchCountries(e.target.value)
       .then(data => {
-        if (data.length === 1) markupCountryInfo(data[0]);
+        if (data.length === 1) markupCountryInfo(data);
         else if (data.length <= 10) markupCountryList(data);
         else
-          Notiflix.Notify.info(
+          Notify.info(
             'Too many matches found. Please enter a more specific name.'
           );
       })
       .catch(error =>
-        Notiflix.Notify.failure('Oops, there is no country with that name')
+        Notify.failure('Oops, there is no country with that name')
       );
 }, DEBOUNCE_DELAY));
 
