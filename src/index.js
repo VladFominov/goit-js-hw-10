@@ -36,11 +36,12 @@ const markupCountryInfo = (country) => {
           flags: { svg },
           languages,
         }) => `<div>
-        <p>name.official:${official}</p>
-        <p>capital:${capital}</p>
-        <p>population:${population}</p>
-        <img src="${svg}" alt="flags" width=40, height=25>
-        <p>languages:${Object.values(languages)}</p>
+        <ul class="countryinfo-list">
+        <li class="countryinfo-item__name"><img src="${svg}" alt="flags" width=20, height=15> ${official}</li>
+        <li class="countryinfo-item">Capital: ${capital}<li>
+        <li class="countryinfo-item">Population: ${population}<li>
+        <li class="countryinfo-item">Languages: ${Object.values(languages)}<li>
+        </ul>
         </div>`
       )
       .join('');
@@ -68,56 +69,4 @@ inputRef.addEventListener('input', debounce(e => {
 }, DEBOUNCE_DELAY));
 
 
-
-// let test = [
-//   {
-//     name: {
-//       common: 'North Korea',
-//       official: "Democratic People's Republic of Korea",
-//       nativeName: {
-//         kor: { official: '조선민주주의인민공화국', common: '조선' },
-//       },
-//     },
-//     capital: ['Pyongyang'],
-//     altSpellings: [
-//       'KP',
-//       "Democratic People's Republic of Korea",
-//       'DPRK',
-//       '조선민주주의인민공화국',
-//       'Chosŏn Minjujuŭi Inmin Konghwaguk',
-//       "Korea, Democratic People's Republic of",
-//       '북한',
-//       '북조선',
-//     ],
-//     languages: { kor: 'Korean' },
-//     population: 25778815,
-//   },
-//   {
-//     name: {
-//       common: 'United Kingdom',
-//       official: 'United Kingdom of Great Britain and Northern Ireland',
-//       nativeName: {
-//         eng: {
-//           official: 'United Kingdom of Great Britain and Northern Ireland',
-//           common: 'United Kingdom',
-//         },
-//       },
-//     },
-//     capital: ['London'],
-//     altSpellings: ['GB', 'UK', 'Great Britain'],
-//     languages: { eng: 'English' },
-//     population: 67215293,
-//   },
-//   {
-//     name: {
-//       common: 'Ukraine',
-//       official: 'Ukraine',
-//       nativeName: { ukr: { official: 'Україна', common: 'Україна' } },
-//     },
-//     capital: ['Kyiv'],
-//     altSpellings: ['UA', 'Ukrayina'],
-//     languages: { ukr: 'Ukrainian' },
-//     population: 44134693,
-//   },
-// ];
 
