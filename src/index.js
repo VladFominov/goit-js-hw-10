@@ -54,7 +54,7 @@ inputRef.addEventListener('input', debounce(e => {
     countryList.textContent = '';
   const value = e.target.value.trim()
   if (!value) return;
-    fetchCountries(e.target.value)
+    fetchCountries(value)
       .then(data => {
         if (data.length === 1) markupCountryInfo(data);
         else if (data.length <= 10) markupCountryList(data);
